@@ -1,6 +1,7 @@
+<button (click)="clearDisplay()">CLEAR DATA</button>
 <div>
-  <button (click)="getAll()">THIS GETS ALL</button>
-  <table *ngIf="displayMe.length > 0" class='table'>
+  <button (click)="getAll()">THIS GETS ALL HARDCODED</button>
+  <table *ngIf="hardCodedData.length > 0" class='table'>
     <thead>
         <tr>
             <th>Name</th>
@@ -8,9 +9,45 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let contact of displayMe;">
+        <tr *ngFor="let contact of hardCodedData;">
             <td>{{contact.name}}</td>
             <td>{{contact.email}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <button (click)="getAllSql()">THIS GETS SQL</button>
+  <table *ngIf="sqlData.length > 0" class='table'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of sqlData;">
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <button (click)="getWorkRampData()">THIS GETS WRData</button>
+  <table *ngIf="workRampParsedArray.length > 0" class='table'>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let training of workRampParsedArray;">
+            <td>{{training.id}}</td>
+            <td>{{training.time}}</td>
         </tr>
     </tbody>
   </table>
